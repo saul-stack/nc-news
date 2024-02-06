@@ -104,7 +104,9 @@ button:focus-visible {
   background-color: whitesmoke;
 }
 
-
+.comment-card{
+  border-style: solid;
+}
 
 @font-face {
   font-family: "dymo";
