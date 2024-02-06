@@ -4,11 +4,13 @@ import { getCommentsByArticleId } from "../../api";
 
 export default function CommentsSection({ article }) {
   const [comments, setComments] = useState([]);
+  const { article_id } = article;
+
   useEffect(() => {
-    getCommentsByArticleId(2).then((result) => {
+    getCommentsByArticleId(article_id).then((result) => {
       setComments(result);
     });
-  }, []);
+  }, [article_id]);
 
   return (
     <section id="comments-section">
@@ -26,7 +28,7 @@ export default function CommentsSection({ article }) {
       <div>
         {comments.map((comment) => {
           return (
-            <div>
+            <div key={comment.comment_id}>
               <CommentCard comment={comment} />
             </div>
           );

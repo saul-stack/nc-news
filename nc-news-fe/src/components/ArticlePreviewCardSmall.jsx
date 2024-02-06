@@ -13,19 +13,20 @@ export default function ArticlePreviewCardSmall({ article }) {
   } = article;
   return (
     <div>
-      <div className="article-preview-card-small">
-        <Link to={`/${topic}/${article_id}`}>
+      <Link to={`/${topic}/${article_id}`}>
+        <div className="article-preview-card-small">
           <img className="article-preview-image-small" src={article_img_url} />
           <h2>{`${title}`}</h2>
-        </Link>
-        <div className="article-details">
-          <ul>{`${created_at.slice(0, 10)}`}</ul>
-          <ul>{`${author}`}</ul>
-          <Link to={`/${topic}`}>
-            <ul>{`${topic}`}</ul>
-          </Link>
+          <ul className="article-details">
+            <li className="detail">{`${created_at.slice(0, 10)}`}</li>
+            <li className="detail">{`${author}`}</li>
+            <li className="detail">{`Votes: ${votes}`}</li>
+            <Link to={`/${topic}`}>
+              <li className="detail">{`${topic}`}</li>
+            </Link>
+          </ul>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

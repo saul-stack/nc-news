@@ -19,7 +19,7 @@ export default function AllArticles() {
       <div className="article-preview-small-grid">
         {articles.map((article) => {
           return (
-            <div>
+            <div key={article.article_id}>
               <ArticlePreviewCardSmall article={article} />
             </div>
           );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ArticleVoteButton from "./ArticleVoteButton";
 
 export default function ArticleCard({ article }) {
   const {
@@ -23,11 +24,10 @@ export default function ArticleCard({ article }) {
           <Link to={`/${topic}`}>
             <div>{`${topic}`}</div>
           </Link>
-          <div>{`${votes} votes`}</div>
-          <div>{`${comment_count} comments`}</div>
         </div>
         <img src={`${article_img_url}`}></img>
         <p className="body">{`${body}`}</p>
+        <ArticleVoteButton article={article} />
       </section>
     </div>
   );
