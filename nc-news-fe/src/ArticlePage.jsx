@@ -2,6 +2,7 @@ import { getArticleById } from "../api";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ArticleCard from "./components/ArticleCard";
+import CommentsSection from "./components/CommentsSection";
 
 export default function ArticlePage() {
   const [article, setArticle] = useState([]);
@@ -16,6 +17,7 @@ export default function ArticlePage() {
   return (
     <div>
       <ArticleCard article={article} />
+      <CommentsSection article={article} />
     </div>
   );
 }
