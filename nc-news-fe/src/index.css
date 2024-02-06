@@ -13,11 +13,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+textarea{
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+}
+  
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #242424;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -72,13 +82,12 @@ button:focus-visible {
   background-color: whitesmoke;
   margin: 10px;
   
-  
   li {
   float:left;
   margin: 0 20px;
   } 
-
 }
+
 .article-preview-image-small{
   
   /* border-style: solid;
@@ -105,8 +114,8 @@ button:focus-visible {
 
 .article-card{
   background-color: whitesmoke;
-  /* border-radius: 1px;
-  border-style: solid; */
+  border-width:0.05cap;
+  /* border-style: solid; */
   .body{
     text-align: justify;
     padding: 20px;
@@ -121,6 +130,10 @@ button:focus-visible {
 }
 
 .comment-card{
+    width: 95%;
+    height: 95%;
+ 
+    
   border-style: solid;
   border-width: 1px;
   padding:1%;

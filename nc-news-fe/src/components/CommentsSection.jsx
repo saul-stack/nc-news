@@ -1,4 +1,5 @@
 import CommentCard from "./CommentCard";
+import NewCommentForm from "./NewCommentForm";
 import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from "../../api";
 
@@ -19,12 +20,7 @@ export default function CommentsSection({ article }) {
         <div>{`${article.comment_count}`}</div>
       </h2>
 
-      {/* <input
-        type="button"
-        onClick="toggleCommentsSectionVisibility()"
-        value="Show comments"
-      /> */}
-
+      <NewCommentForm article_id />
       <div>
         {comments.map((comment) => {
           return (
