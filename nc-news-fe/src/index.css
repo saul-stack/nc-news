@@ -62,13 +62,22 @@ button:focus-visible {
 .article-preview-card-small{
 
   text-align: left;
-  /* border-style: dashed;
-  border-color: #1a1a1a;
-  border-radius: 2px; */
+  border-style: solid;
+  border-width: 1px;
+  /* border-color: #1a1a1a; */
   /* height: 250px; */
   width: 280px;
+  min-height: 400px;
   padding: 20px;
+  background-color: whitesmoke;
+  margin: 10px;
   
+  
+  li {
+  float:left;
+  margin: 0 20px;
+  } 
+
 }
 .article-preview-image-small{
   
@@ -78,19 +87,26 @@ button:focus-visible {
   width:280px;
   align-self: auto;
 
+
   
 }
 
 .article-details{
  display:grid;
  grid-template-rows: 1fr 1fr 1fr;
- 
+ font-size: 15px; 
+ /* text-align: left; */
+ .detail{
+  margin:5px;
+
+ }
 
 }
 
 .article-card{
-  border-radius: 1px;
-  border-style: solid;
+  background-color: whitesmoke;
+  /* border-radius: 1px;
+  border-style: solid; */
   .body{
     text-align: justify;
     padding: 20px;
@@ -101,13 +117,33 @@ button:focus-visible {
 .article-preview-small-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 
 .comment-card{
   border-style: solid;
+  border-width: 1px;
+  padding:1%;
+  margin:1%;
+  font-family:'Courier New', Courier, monospace;
+  text-align:justify;
+  background-color: rgba(245, 245, 245, 0.389);
+
+  
 }
 
+
+.like-button-true{
+  .likes-counter{
+      color:#535bf2
+}
+}
+
+/* .like-button-false{
+  .likes-counter{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+
+} */
 @font-face {
   font-family: "dymo";
   src: local("dymo"), url(./assets/fonts/Dymo.ttf) format("truetype");
