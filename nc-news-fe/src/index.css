@@ -33,6 +33,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: dymo;
+}
+
+h2 {
+  font-size: 1em;
 }
 
 button {
@@ -52,6 +57,58 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.article-preview-card-small{
+
+  text-align: left;
+  /* border-style: dashed;
+  border-color: #1a1a1a;
+  border-radius: 2px; */
+  /* height: 250px; */
+  width: 280px;
+  padding: 20px;
+  
+}
+.article-preview-image-small{
+  
+  /* border-style: solid;
+  border-radius: 2px; */
+  /* height: 200px; */
+  width:280px;
+  align-self: auto;
+
+  
+}
+
+.article-details{
+ display:grid;
+ grid-template-rows: 1fr 1fr 1fr;
+ 
+
+}
+
+.article-card{
+  border-radius: 1px;
+  border-style: solid;
+  .body{
+    text-align: justify;
+    padding: 20px;
+  }
+
+}
+
+.article-preview-small-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: whitesmoke;
+}
+
+
+
+@font-face {
+  font-family: "dymo";
+  src: local("dymo"), url(./assets/fonts/Dymo.ttf) format("truetype");
 }
 
 @media (prefers-color-scheme: light) {
