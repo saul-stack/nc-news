@@ -8,9 +8,11 @@ export default function CommentsSection({ article }) {
   const { article_id } = article;
 
   useEffect(() => {
-    getCommentsByArticleId(article_id).then((result) => {
-      setComments(result);
-    });
+    if (article_id) {
+      getCommentsByArticleId(article_id).then((result) => {
+        setComments(result);
+      });
+    }
   }, [article_id]);
 
   return (
