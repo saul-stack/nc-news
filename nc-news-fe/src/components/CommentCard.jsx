@@ -7,6 +7,7 @@ export default function CommentCard({ comment }) {
       <h3>{`${author}`}</h3>
       <p className="body">{`${body}`}</p>
       <div>{`votes: ${votes}`}</div>
+      <div>{`${created_at.slice(0, 10)}`}</div>
     </section>
   );
 }

@@ -1,8 +1,8 @@
 import "./App.css";
-import LandingPage from "./LandingPage";
+import LandingPage from "./pages/LandingPage";
 import { Routes, Route, Router, Link, useLocation } from "react-router-dom";
-import AllArticles from "./AllArticles";
-import ArticlePage from "./ArticlePage";
+import AllArticles from "./pages/AllArticlesPage";
+import ArticlePage from "./pages/ArticlePage";
 function App() {
   const { pathname } = useLocation();
 

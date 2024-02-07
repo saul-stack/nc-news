@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { getAllArticles } from "../api";
-import { useEffect } from "react";
-import ArticlePreviewCardSmall from "./components/ArticlePreviewCardSmall";
+import { useEffect, useState } from "react";
+import { getAllArticles } from "../../api";
+import ArticlePreviewCardSmall from "../components/ArticlePreviewCardSmall";
 
 export default function AllArticles() {
   const [articles, setArticles] = useState([]);

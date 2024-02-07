@@ -28,7 +28,6 @@ export const submitVote = (articleId, numberOfVotes) => {
 
 export const submitComment = (articleId, comment) => {
   const { userName, body } = comment;
-  console.log("hi");
   axios
     .post(
       `https://nc-server-be.onrender.com/api/articles/${articleId}/comments`,
@@ -37,9 +36,7 @@ export const submitComment = (articleId, comment) => {
         body: body,
       }
     )
-    .then(({ data }) => {
-      console.log(data);
-    })
+
     .catch((error) => {
       console.log(error.response);
     });

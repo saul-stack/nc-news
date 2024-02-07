@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import ArticleVoteButton from "./ArticleVoteButton";
-
+import ArticleVoteButton from "./User-Submit/ArticleVoteButton";
 export default function ArticleCard({ article }) {
   const {
     article_id,

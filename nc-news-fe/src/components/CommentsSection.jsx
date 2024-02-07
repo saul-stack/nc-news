@@ -1,5 +1,6 @@
 import CommentCard from "./CommentCard";
-import NewCommentForm from "./NewCommentForm";
+import DummyComment from "./DummyComment";
+import NewCommentForm from "./User-Submit/NewCommentForm";
 import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from "../../api";
 
