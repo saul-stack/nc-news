@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { submitComment } from "../../../api";
 import { useParams } from "react-router";
 import DummyComment from "../DummyComment";
@@ -48,7 +48,7 @@ export default function NewCommentForm() {
           </button>
         </div>
       </form>
-      <div id="comment-container">
+      <div>
         {dummyCommentsList.map((comment, index) => (
           <DummyComment key={index} comment={comment} />
         ))}

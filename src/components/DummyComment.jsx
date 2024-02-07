@@ -1,6 +1,6 @@
 export default function DummyComment({ comment }) {
-  const { userName, body } = comment;
-
+  const { userName, body, comment_id } = comment;
+  console.log(comment);
   return (
     <section className="comment-card">
       <h3>{userName}</h3>
