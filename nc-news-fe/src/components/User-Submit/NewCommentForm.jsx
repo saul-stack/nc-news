@@ -18,10 +18,15 @@ export default function NewCommentForm() {
   };
 
   const handleSubmit = () => {
-    const newComment = { userName, body: commentBody };
-    submitComment(article_id, newComment);
-    setCommentBody("");
-    setDummyCommentsList([newComment, ...dummyCommentsList]);
+    if (commentBody) {
+      const newComment = { userName, body: commentBody };
+      submitComment(article_id, newComment);
+      setCommentBody("");
+      setDummyCommentsList([newComment, ...dummyCommentsList]);
+    } else {
+      //need to create a popup or dialog etc. to prompt the user to post a comment
+      console.log("error, user not submitted comment");
+    }
   };
 
   return (
