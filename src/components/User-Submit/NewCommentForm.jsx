@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import DummyComment from "../DummyComment";
 
 //currently hardcoded, will use context to pass userName in from the top
-const userName = "grumpy19";
+const userName = "tickle122";
 
 export default function NewCommentForm() {
   const { article_id } = useParams();

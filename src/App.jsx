@@ -3,11 +3,13 @@ import LandingPage from "./pages/LandingPage";
 import { Routes, Route, Router, Link, useLocation } from "react-router-dom";
 import AllArticles from "./pages/AllArticlesPage";
 import ArticlePage from "./pages/ArticlePage";
+import CurrentUserAvatarCard from "./components/CurrentUserAvatarCard";
 function App() {
   const { pathname } = useLocation();
 
   return (
     <div>
+      <CurrentUserAvatarCard />
       <div>{pathname != "/" ? <Link to="/">Home</Link> : null}</div>
       <h1>NC-News</h1>
       <Routes>

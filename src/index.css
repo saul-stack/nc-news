@@ -20,7 +20,19 @@ textarea{
   resize: none;
   font-family: 'Courier New', Courier, monospace;
 }
-  
+
+.user-card{
+  background-color: #ececec;
+  /* border-style: solid; */
+  div{
+    width: 70px;
+    background-color: #b3b3b3;
+    img {
+      border-radius: 10%;
+      width: 70px
+    }
+  }
+}
 
 a {
   font-weight: 500;

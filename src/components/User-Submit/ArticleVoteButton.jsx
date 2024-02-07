@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { submitVote } from "../../../api";
 export default function ArticleVoteButton({ article }) {
   const { votes, article_id } = article;
