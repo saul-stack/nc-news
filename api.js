@@ -38,8 +38,6 @@ export const submitComment = (articleId, comment) => {
     });
 };
 
-// export const deleteComment = () => {
-//   ncNewsApi.delete();
-// };
-
-// DELETE /api/comments/:comment_id
+export const deleteCommentById = (comment_id) => {
+  ncNewsApi.delete(`/comments/${comment_id}`);
+};
