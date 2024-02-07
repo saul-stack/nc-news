@@ -28,16 +28,18 @@ export const submitVote = (articleId, numberOfVotes) => {
 
 export const submitComment = (articleId, comment) => {
   const { userName, body } = comment;
-  axios
-    .post(
-      `https://nc-server-be.onrender.com/api/articles/${articleId}/comments`,
-      {
-        userName: userName,
-        body: body,
-      }
-    )
-
+  ncNewsApi
+    .post(`/articles/${articleId}/comments`, {
+      userName: userName,
+      body: body,
+    })
     .catch((error) => {
       console.log(error.response);
     });
 };
+
+// export const deleteComment = () => {
+//   ncNewsApi.delete();
+// };
+
+// DELETE /api/comments/:comment_id
