@@ -4,14 +4,17 @@ const ncNewsApi = axios.create({
   baseURL: "https://nc-server-be.onrender.com/api",
 });
 
-export const getAllArticles = () => {
-  return ncNewsApi.get("/articles").then(({ data }) => {
-    return data.articles;
-  });
-};
+export const getArticles = (params) => {
+  let path = "/articles";
+  if (params) {
+    const { requestedCategory, testQuery } = params;
 
-export const getArticlesByCategory = (requestedTopic) => {
-  return ncNewsApi.get(`/articles?topic=${requestedTopic}`).then(({ data }) => {
+    if (requestedCategory) {
+      path = path.concat(`?topic=${requestedCategory}`);
+      console.log(path);
+    }
+  }
+  return ncNewsApi.get(path).then(({ data }) => {
     return data.articles;
   });
 };
@@ -34,10 +37,13 @@ export const submitVote = (articleId, numberOfVotes) => {
 
 export const submitComment = (articleId, comment) => {
   const { userName, body } = comment;
-  ncNewsApi
+  return ncNewsApi
     .post(`/articles/${articleId}/comments`, {
       userName: userName,
       body: body,
+    })
+    .then((result) => {
+      return result.data.comment.comment_id;
     })
     .catch((error) => {
       console.log(error.response);

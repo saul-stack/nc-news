@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { getAllArticles } from "../../api";
+import { getArticles } from "../../api";
 import ArticlePreviewCardSmall from "../components/ArticlePreviewCardSmall";
 
 export default function AllArticles() {
   const [articles, setArticles] = useState([]);
 
+  const sortBy = null;
+  const order = null;
+
+  let articleSort = { sortBy, order };
+
   useEffect(() => {
-    getAllArticles().then((result) => {
+    getArticles().then((result) => {
       setArticles(result);
     });
   }, []);
@@ -14,7 +19,6 @@ export default function AllArticles() {
   return (
     <div>
       <h2>All Articles</h2>
-
       <div className="article-preview-small-grid">
         {articles.map((article) => {
           return (
