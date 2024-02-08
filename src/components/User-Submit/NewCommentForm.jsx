@@ -21,7 +21,17 @@ export default function NewCommentForm() {
     submitComment(article_id, newComment);
     setCommentBody("");
     setDummyCommentsList([newComment, ...dummyCommentsList]);
+
+    //when the submission is sent, it should refresh the comments on the page again
+    // getCommentsByArticleId(article_id).then((result) => {
+    //   setComments(result);
+    // });
   };
+
+  function handleDeleteDummy(comment_index) {
+    dummyCommentsList.splice(comment_index, 1);
+    setDummyCommentsList([...dummyCommentsList]);
+  }
 
   return (
     <section>
@@ -44,7 +54,12 @@ export default function NewCommentForm() {
       </form>
       <div>
         {dummyCommentsList.map((comment, index) => (
-          <DummyComment key={index} comment={comment} />
+          <DummyComment
+            key={index}
+            index={index}
+            comment={comment}
+            deleteDummy={handleDeleteDummy}
+          />
         ))}
       </div>
     </section>
