@@ -3,6 +3,7 @@ import { submitComment } from "../../../api";
 import { useParams } from "react-router";
 import DummyComment from "../DummyComment";
 import { currentUser } from "../../App";
+import { deleteCommentById } from "../../../api";
 
 export default function NewCommentForm() {
   const userName = currentUser._currentValue.userName;
@@ -18,19 +19,17 @@ export default function NewCommentForm() {
 
   const handleSubmit = () => {
     const newComment = { userName, body: commentBody };
-    submitComment(article_id, newComment);
-    setCommentBody("");
-    setDummyCommentsList([newComment, ...dummyCommentsList]);
-
-    //when the submission is sent, it should refresh the comments on the page again
-    // getCommentsByArticleId(article_id).then((result) => {
-    //   setComments(result);
-    // });
+    submitComment(article_id, newComment).then((result) => {
+      newComment.comment_id = result;
+      setCommentBody("");
+      setDummyCommentsList([newComment, ...dummyCommentsList]);
+    });
   };
 
-  function handleDeleteDummy(comment_index) {
+  function handleDeleteDummy(comment_index, comment_id) {
     dummyCommentsList.splice(comment_index, 1);
     setDummyCommentsList([...dummyCommentsList]);
+    deleteCommentById(comment_id);
   }
 
   return (
@@ -53,8 +52,9 @@ export default function NewCommentForm() {
         </div>
       </form>
       <div>
-        {dummyCommentsList.map((comment, index) => (
+        {dummyCommentsList.map((comment, index, comment_id) => (
           <DummyComment
+            comment_id={comment_id}
             key={index}
             index={index}
             comment={comment}

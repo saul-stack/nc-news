@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getArticlesByCategory } from "../../api";
+import { getArticles } from "../../api";
 import ArticlePreviewCardSmall from "../components/ArticlePreviewCardSmall";
 import { useParams } from "react-router";
 
@@ -8,7 +8,7 @@ export default function ArticlesByCategory() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getArticlesByCategory(requestedCategory).then((result) => {
+    getArticles({ requestedCategory }).then((result) => {
       setArticles(result);
     });
   }, []);
