@@ -1,19 +1,19 @@
-export default function DummyComment({ comment }) {
-  const { userName, body, comment_id } = comment;
+export default function DummyComment({ comment, deleteDummy, index }) {
+  const { userName, body } = comment;
 
-  function handleClick_DeleteDummyComment() {
-    // trigger a re render of the dummyCommentsList
-    console.log("trying to delete the dummy comment");
-  }
+  //need to somehow pass in the comment_id from the new comment.
+  // will need get request to  server and refresh the comments?
+  //this comment_id will then be sent as a delete request to the server
+  //currently, deleting dummy_comment does not send any delete request to the server
 
   return (
     <section className="comment-card">
-      <h3>{userName} Dummy COMMETNT!!</h3>
+      <h3>{userName} This is a dummy comment, optimistic rendering</h3>
       <p className="body">{body}</p>
       <div>votes: 0</div>
       <div>Just now</div>
 
-      <button onClick={handleClick_DeleteDummyComment} type="button">
+      <button type="button" onClick={() => deleteDummy(index)}>
         Delete comment
       </button>
     </section>
