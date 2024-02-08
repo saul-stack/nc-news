@@ -10,6 +10,12 @@ export const getAllArticles = () => {
   });
 };
 
+export const getArticlesByCategory = (requestedTopic) => {
+  return ncNewsApi.get(`/articles?topic=${requestedTopic}`).then(({ data }) => {
+    return data.articles;
+  });
+};
+
 export const getArticleById = (article_id) => {
   return ncNewsApi.get(`/articles/${article_id}`).then(({ data }) => {
     return data.article;

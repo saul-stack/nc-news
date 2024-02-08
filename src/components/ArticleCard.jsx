@@ -20,7 +20,7 @@ export default function ArticleCard({ article }) {
           <h2>{`${title}`}</h2>
           <div>Written by {`${author}`}</div>
           <div>{String(`${created_at}`).slice(0, 10)}</div>
-          <Link to={`/${topic}`}>
+          <Link to={`/articles/${topic}`}>
             <div>{`${topic}`}</div>
           </Link>
         </div>

@@ -1,21 +1,37 @@
 import "./App.css";
-import LandingPage from "./pages/LandingPage";
-import { Routes, Route, Router, Link, useLocation } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import ArticlesByCategory from "./pages/ArticlesByCategoryPage";
 import AllArticles from "./pages/AllArticlesPage";
 import ArticlePage from "./pages/ArticlePage";
 import CurrentUserAvatarCard from "./components/CurrentUserAvatarCard";
+import LandingPage from "./pages/LandingPage";
+import { useLocation } from "react-router-dom";
+import { createContext } from "react";
+
+//currently hardcoded user details passed as context
+export const currentUser = createContext({
+  userName: "tickle122",
+  name: "Tom Tickle",
+  avatar_url:
+    "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
+});
+
 function App() {
   const { pathname } = useLocation();
 
   return (
     <div>
       <CurrentUserAvatarCard />
-      <div>{pathname != "/" ? <Link to="/">Home</Link> : null}</div>
+      <div>{pathname !== "/" && <Link to="/">Home</Link>}</div>
       <h1>NC-News</h1>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/articles" element={<AllArticles />} />
-        <Route path={`/:topic/:article_id`} element={<ArticlePage />} />
+        <Route path={`/articles/:topic`} element={<ArticlesByCategory />} />
+        <Route
+          path={`/articles/:topic/:article_id`}
+          element={<ArticlePage />}
+        />
       </Routes>
     </div>
   );
