@@ -6,7 +6,7 @@ import CommentsSection from "../components/CommentsSection";
 
 //need to have a user profile object which contains an array of all the articles they have voted on, so they can only vote on each article once
 
-export default function ArticlePage() {
+export default function SingleArticlePage() {
   const [article, setArticle] = useState([]);
   const requestedArticleId = useParams().article_id;
 
