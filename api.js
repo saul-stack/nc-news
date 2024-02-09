@@ -5,13 +5,18 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (params) => {
+  console.log("got these params", params);
   let path = "/articles";
   if (params) {
-    const { requestedCategory, testQuery } = params;
+    const { requestedCategory, sort_by } = params;
 
     if (requestedCategory) {
       path = path.concat(`?topic=${requestedCategory}`);
       console.log(path);
+    }
+
+    if (sort_by) {
+      path = path.concat(`?sort_by=${sort_by}`);
     }
   }
   return ncNewsApi.get(path).then(({ data }) => {

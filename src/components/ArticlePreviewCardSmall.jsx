@@ -18,6 +18,7 @@ export default function ArticlePreviewCardSmall({ article }) {
         <div className="article-preview-card-small">
           <img className="article-preview-image-small" src={article_img_url} />
           <h2>{`${title}`}</h2>
+          <h2>coments: {comment_count}</h2>
           <ul className="article-details">
             <li className="detail">{`${created_at.slice(0, 10)}`}</li>
             <li className="detail">{`${author}`}</li>
