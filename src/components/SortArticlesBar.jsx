@@ -4,8 +4,8 @@ export default function SortArticlesBy({ changeChoice }) {
     "Oldest",
     "Most Popular",
     "Least Popular",
-    "Most commented",
-    "Least commented",
+    "Most Commented",
+    "Least Commented",
   ];
 
   const handleChange = (event) => {
@@ -25,10 +25,10 @@ export default function SortArticlesBy({ changeChoice }) {
       case "Least Popular":
         requestString = "votes&order=asc";
         break;
-      case "Most commented":
+      case "Most Commented":
         requestString = "comment_count";
         break;
-      case "Least commented":
+      case "Least Commented":
         requestString = "comment_count&order=asc";
         break;
       default:

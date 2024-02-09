@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import { useLocation } from "react-router-dom";
 import { createContext } from "react";
 import Articles from "./pages/ArticlesPage";
-
+import SingleArticlePage from "./pages/SingleArticlePage";
 //currently hardcoded user details passed as context
 export const currentUser = createContext({
   userName: "tickle122",
@@ -28,7 +28,7 @@ function App() {
         <Route path={`/articles/:topic`} element={<Articles />} />
         <Route
           path={`/articles/:topic/:article_id`}
-          element={<ArticlePage />}
+          element={<SingleArticlePage />}
         />
       </Routes>
     </div>
