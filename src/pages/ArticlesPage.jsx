@@ -27,7 +27,13 @@ export default function Articles() {
 
   return (
     <div>
-      <h2>{topic ? `Recent articles about ${topic}` : "All Articles"}</h2>
+      <h2>
+        {topic
+          ? `Recent articles about ${
+              topic.charAt(0).toUpperCase() + topic.slice(1)
+            }`
+          : "All Articles"}
+      </h2>
       <SortArticlesBy changeChoice={handleState} />
       <div className="article-preview-small-grid">
         {articles.map((article) => (
