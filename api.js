@@ -19,7 +19,6 @@ export const getArticles = (params) => {
     if (sort_by) {
       if (numberOfQueries > 1) path = path.concat("&");
       path = path.concat(`sort_by=${sort_by}`);
-      console.log(path);
     }
   }
 
