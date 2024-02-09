@@ -5,20 +5,24 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (params) => {
-  console.log("got these params", params);
   let path = "/articles";
+  const numberOfQueries = Object.keys(params).length;
   if (params) {
     const { requestedCategory, sort_by } = params;
 
+    path = path.concat("?");
+
     if (requestedCategory) {
-      path = path.concat(`?topic=${requestedCategory}`);
-      console.log(path);
+      path = path.concat(`topic=${requestedCategory}`);
     }
 
     if (sort_by) {
-      path = path.concat(`?sort_by=${sort_by}`);
+      if (numberOfQueries > 1) path = path.concat("&");
+      path = path.concat(`sort_by=${sort_by}`);
+      console.log(path);
     }
   }
+
   return ncNewsApi.get(path).then(({ data }) => {
     return data.articles;
   });
