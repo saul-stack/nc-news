@@ -19,10 +19,10 @@ export default function NewCommentForm() {
 
   const handleSubmit = () => {
     const newComment = { userName, body: commentBody };
+    setCommentBody("");
+    setDummyCommentsList([newComment, ...dummyCommentsList]);
     submitComment(article_id, newComment).then((result) => {
       newComment.comment_id = result;
-      setCommentBody("");
-      setDummyCommentsList([newComment, ...dummyCommentsList]);
     });
   };
 
