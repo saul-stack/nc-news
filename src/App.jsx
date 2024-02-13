@@ -17,8 +17,6 @@ export const currentUser = createContext({
 });
 
 export const MyContext = createContext("");
-//pass isLoading as context.
-//modifiy the state of isLoading based on whern it should or shouldn't be loading
 
 function App() {
   const { pathname } = useLocation();

@@ -2,7 +2,7 @@ export default function DummyComment({ comment, deleteDummy, index }) {
   const { userName, body, comment_id } = comment;
   return (
     <section className="comment-card">
-      <h3>{userName} This is a dummy comment, optimistic rendering</h3>
+      <h3>{userName}</h3>
       <p className="body">{body}</p>
       <div>votes: 0</div>
       <div>Just now</div>

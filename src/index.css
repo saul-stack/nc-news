@@ -27,11 +27,13 @@ textarea{
   div{
     width: 70px;
     background-color: #b3b3b3;
-    img {
-      border-radius: 10%;
-      width: 70px
-    }
+   
   }
+}
+
+.user-card img{ 
+  border-radius: 10%;
+  width: 70px
 }
 
 a {
