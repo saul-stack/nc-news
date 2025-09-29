@@ -39,7 +39,7 @@ server.delete("/api/comments/:comment_id", deleteCommentByCommentId);
 
 server.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-server.get("*", (req, res) => {
+server.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
