@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/saul-stack/nc-news/issues"
   },
-  "homepage": "https://github.com/saul-stack/nc-news#readme"
+  "homepage": "https://github.com/saul-stack/nc-news#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
