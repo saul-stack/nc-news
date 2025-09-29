@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const ncNewsApi = axios.create({
-  baseURL: "https://nc-server-be.onrender.com/api",
+  baseURL: API_BASE_URL,
 });
 
 export const getArticles = (params) => {
