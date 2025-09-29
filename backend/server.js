@@ -1,6 +1,7 @@
 const express = require("express");
 const server = express();
 const cors = require("cors");
+const path = require("path");
 
 const {
   getAllTopics,
@@ -35,6 +36,12 @@ server.patch("/api/articles/:article_id", patchArticleByArticleId);
 server.post("/api/articles/:article_id/comments", postCommentByArticleId);
 
 server.delete("/api/comments/:comment_id", deleteCommentByCommentId);
+
+server.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+server.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 
 server.use((err, req, res, next) => {
   //handle 404s
