@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm install",
+    "start:backend": "cd backend && node listen.js",
+    "start:all": "concurrently \"npm run start:backend\" \"cd frontend && npm run dev\""
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/saul-stack/nc-news/issues"
   },
-  "homepage": "https://github.com/saul-stack/nc-news#readme"
+  "homepage": "https://github.com/saul-stack/nc-news#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
